@@ -19,6 +19,7 @@
   align-items: center;
   font-size: 1.2em;
   overflow: visible;
+  justify-content: center;
 }
 
 #root::-webkit-scrollbar {

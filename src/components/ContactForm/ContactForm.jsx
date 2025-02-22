@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { addContact } from '../../redux/contactsOps';
+import { selectContacts } from '../../redux/contactsSlice';
 
 const initialValues = {
   name: '',
@@ -27,7 +28,7 @@ const ContactFormSchema = Yup.object().shape({
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contactList = useSelector(state => state.contacts.items);
+  const contactList = useSelector(selectContacts);
   const onAddContact = newContact => {
     newContact.number = newContact.number.match(/\d/gi).join('');
 
