@@ -11,7 +11,7 @@ import ErrorMessage from './ErrorMessage/ErrorMessage';
 
 function App() {
   const loading = useSelector(selectLoading);
-  console.log('loading => ', loading);
+  // console.log('loading => ', loading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
