@@ -1,11 +1,10 @@
 import css from './ContactForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { nanoid } from 'nanoid';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contactsOps';
 
 const initialValues = {
   name: '',
@@ -47,10 +46,9 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (newContact, actions) => {
-    newContact.id = nanoid();
+  const handleSubmit = (newContact, options) => {
     onAddContact(newContact);
-    actions.resetForm();
+    options.resetForm();
   };
   return (
     <Formik
